@@ -56,7 +56,7 @@ class ViewController: UIViewController {
     
     func updateUI(){
         
-        correctAnswers.text = "\(questionnumber)/6"
+        correctAnswers.text = "\(questionnumber)/\(allquestion.list.count))"
         
     
         score.text = "\(yourScore)"
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
     
     func nextQuestion(){
         print(questionnumber)
-        if questionnumber <= 5 {
+        if questionnumber < allquestion.list.count {
             question.text = allquestion.list[questionnumber].questionText
         }
         else{
@@ -107,9 +107,10 @@ class ViewController: UIViewController {
     func startOver(){
         let firstQuestion = allquestion.list[questionnumber]
         question.text = firstQuestion.questionText
-        
+        yourScore = 0
         
         score.text = "\(yourScore)"
+        updateUI()
     }
 
 }
