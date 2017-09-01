@@ -16,6 +16,8 @@
 		08D6664C1F593CE1001381A1 /* swiftQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6664B1F593CE1001381A1 /* swiftQuizUITests.swift */; };
 		08D6665C1F593D0D001381A1 /* question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6665B1F593D0D001381A1 /* question.swift */; };
 		08D6665E1F593D23001381A1 /* questionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6665D1F593D23001381A1 /* questionList.swift */; };
+		08D666641F595605001381A1 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 08D666611F595605001381A1 /* ProgressHUD.bundle */; };
+		08D666651F595605001381A1 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D666631F595605001381A1 /* ProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		08D6664D1F593CE1001381A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08D6665B1F593D0D001381A1 /* question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = question.swift; sourceTree = "<group>"; };
 		08D6665D1F593D23001381A1 /* questionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = questionList.swift; sourceTree = "<group>"; };
+		08D666601F595604001381A1 /* swiftQuiz-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "swiftQuiz-Bridging-Header.h"; sourceTree = "<group>"; };
+		08D666611F595605001381A1 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		08D666621F595605001381A1 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		08D666631F595605001381A1 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,8 @@
 				08D666321F593CE0001381A1 /* Assets.xcassets */,
 				08D666341F593CE0001381A1 /* LaunchScreen.storyboard */,
 				08D666371F593CE0001381A1 /* Info.plist */,
+				08D666661F59560C001381A1 /* 3rd Party Library */,
+				08D666601F595604001381A1 /* swiftQuiz-Bridging-Header.h */,
 			);
 			path = swiftQuiz;
 			sourceTree = "<group>";
@@ -154,6 +162,16 @@
 			);
 			name = Model;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		08D666661F59560C001381A1 /* 3rd Party Library */ = {
+			isa = PBXGroup;
+			children = (
+				08D666611F595605001381A1 /* ProgressHUD.bundle */,
+				08D666621F595605001381A1 /* ProgressHUD.h */,
+				08D666631F595605001381A1 /* ProgressHUD.m */,
+			);
+			name = "3rd Party Library";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +242,7 @@
 				TargetAttributes = {
 					08D666271F593CE0001381A1 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					08D6663B1F593CE0001381A1 = {
@@ -263,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08D666641F595605001381A1 /* ProgressHUD.bundle in Resources */,
 				08D666361F593CE0001381A1 /* LaunchScreen.storyboard in Resources */,
 				08D666331F593CE0001381A1 /* Assets.xcassets in Resources */,
 				08D666311F593CE0001381A1 /* Main.storyboard in Resources */,
@@ -292,6 +312,7 @@
 			files = (
 				08D6662E1F593CE0001381A1 /* ViewController.swift in Sources */,
 				08D6665E1F593D23001381A1 /* questionList.swift in Sources */,
+				08D666651F595605001381A1 /* ProgressHUD.m in Sources */,
 				08D6662C1F593CE0001381A1 /* AppDelegate.swift in Sources */,
 				08D6665C1F593D0D001381A1 /* question.swift in Sources */,
 			);
@@ -445,10 +466,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = swiftQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vj.swiftQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swiftQuiz/swiftQuiz-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -457,10 +481,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = swiftQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vj.swiftQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swiftQuiz/swiftQuiz-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
